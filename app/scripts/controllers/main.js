@@ -10,23 +10,27 @@
 angular.module('weatherApp')
   .controller('MainCtrl', function ($scope, weatherService, $http) {
 
-    function fetchDataByZip(zip){
-      var weatherData = weatherService.getWeatherData(zip);
-      weatherData
-        .success(function(data) {
-          $scope.myZIP = zip;
-          $scope.weatherData = data;
-        });
+
+    function validateZip(zip){
+      var zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
+      return zipRegex.test(zip);
     }
 
-    $scope.fetchWeatherData = function(){
+    function addToScope(localWeather){
+      $scope.localWeather = localWeather;
+    }
+
+    function fetchWeatherData(){
       var zip = $scope.zipCode;
       if(zip && (zip.length >= 5)){// sanity check
-        fetchDataByZip(zip);
+        weatherService.fetchWeatherData(zip, addToScope);
       }
-    };
+    }
 
-    $scope.weatherData = {};
+    $scope.fetchWeatherData = fetchWeatherData;
+    $scope.localWeather = {};
     $scope.zipCode = "";
+    $scope.isValidZip = validateZip;
+
 
   });

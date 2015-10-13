@@ -1,17 +1,19 @@
-<div class="container">
+<div class="container weather-data-grid" ng-if="localWeather.zip">
   <div class="row">
-    <div class="col-sm-12">Weather for {{myZIP}}</div>
+    <div class="col-sm-12">
+      <h3 class="center-block">Weather for {{localWeather.zip}}</h3>
+    </div>
   </div>
-  <div class="row">
+  <div class="row headers">
     <div class="col-sm-3">Description</div>
     <div class="col-sm-3">Temp</div>
     <div class="col-sm-3">Humidity</div>
     <div class="col-sm-3">Atmospheric Pressure</div>
   </div>
   <div class="row">
-    <div class="col-sm-3">{{weatherData.weather[0].description}}</div>
-    <div class="col-sm-3">{{weatherData.main.temp}}</div>
-    <div class="col-sm-3">{{weatherData.main.humidity}}</div>
-    <div class="col-sm-3">{{weatherData.main.pressure}}</div>
+    <div class="col-sm-3"><label class="small-label">Description : </label>{{localWeather.description}}</div>
+    <div class="col-sm-3"><label class="small-label">Temp : </label>{{localWeather.temp}}</div>
+    <div class="col-sm-3"><label class="small-label">Humidity : </label>{{localWeather.humidity}}</div>
+    <div class="col-sm-3"><label class="small-label">Pressure : </label>{{localWeather.pressure}}</div>
   </div>
 </div>

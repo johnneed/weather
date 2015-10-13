@@ -27,6 +27,17 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    less: {
+      development: {
+        options: {
+          paths: ["app/styles/less"]
+        },
+        files: {
+          "app/styles/main.css": "app/styles/less/main.less"
+        }
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -385,6 +396,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'less:development',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

@@ -1,12 +1,9 @@
 <div class="jumbotron">
-  <h1>Weather</h1>
-
   <p>
     <label for="zipCode">Enter a US ZIP code</label>
     <input id="zipCode" ng-model="zipCode"/>
-    <button class="btn btn-lg btn-success" ng-click="fetchWeatherData()">
-      Okay Go!
-      <span class="glyphicon glyphicon-ok"></span>
+    <button class="btn btn-lg btn-success fetch-weather" ng-disabled="!isValidZip(zipCode)" ng-click="fetchWeatherData()">
+      <span class="glyphicon glyphicon-cloud"></span>&nbsp;Fetch Weather&nbsp;<span class="glyphicon glyphicon-cloud"></span>
     </button>
   </p>
 </div>

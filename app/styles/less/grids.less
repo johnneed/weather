@@ -1,0 +1,34 @@
+/*==========  Mobile First Method  ==========*/
+
+.weather-data-grid{
+  .row {
+    &.headers {
+      display:none;
+    }
+    [class^='col-'] {
+      text-align: left;
+      .small-label{display:inline;
+        font-weight: bold;
+        color: #444;}
+    }
+  }
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+  .weather-data-grid{
+    .row {
+      &.headers {
+        display:block;
+        [class^='col-'] {
+          font-weight: bold;
+        }
+      }
+      [class^='col-'] {
+        text-align: center;
+        .small-label{display:none;}
+      }
+    }
+  }
+}
