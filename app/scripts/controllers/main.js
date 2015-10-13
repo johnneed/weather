@@ -8,36 +8,35 @@
  * Controller of the weatherApp
  */
 angular.module('weatherApp')
-  .controller('MainCtrl', function ($scope, weatherService) {
+    .controller('MainCtrl', function ($scope, weatherService) {
 
+        function validateZip(zip) {
+            var zipRegex = /^\d{5}?$/;
+            return zipRegex.test(zip);
+        }
 
-    function validateZip(zip){
-      var zipRegex = /^\d{5}?$/;
-      return zipRegex.test(zip);
-    }
+        function addToScope(localWeather) {
+            if (localWeather.message) { // this is an error
+                $scope.cityNotFound = true;
+                $scope.zipCode = '';
+                $scope.localWeather = {};
+                return null;
+            }
+            $scope.localWeather = localWeather;
+            $scope.cityNotFound = false;
+        }
 
-    function addToScope(localWeather){
-      if(localWeather.message){ // this is an error
-        $scope.cityNotFound = true;
+        function fetchWeatherData() {
+            var zip = $scope.zipCode;
+            if (zip && (zip.length >= 5)) {// sanity check
+                weatherService.fetchWeatherData(zip, addToScope);
+            }
+        }
+
+        $scope.cityNotFound = false;
+        $scope.fetchWeatherData = fetchWeatherData;
+        $scope.localWeather = {};
         $scope.zipCode = '';
-        return null;
-      }
-      $scope.localWeather = localWeather;
-      $scope.cityNotFound = false;
-    }
+        $scope.isValidZip = validateZip;
 
-    function fetchWeatherData(){
-      var zip = $scope.zipCode;
-      if(zip && (zip.length >= 5)){// sanity check
-        weatherService.fetchWeatherData(zip, addToScope);
-      }
-    }
-
-    $scope.cityNotFound = false;
-    $scope.fetchWeatherData = fetchWeatherData;
-    $scope.localWeather = {};
-    $scope.zipCode = '';
-    $scope.isValidZip = validateZip;
-
-
-  });
+    });
