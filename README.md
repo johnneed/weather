@@ -6,7 +6,7 @@ Angular Demo App
 #To Run this App
 #
 1. Install Nodejs
-2. Clone reposository
+2. Clone repository
 3. Navigate to the root of project : cd weather
 4. Install grunt and grunt-cli  : npm install -g grunt grunt-cli
 5. Install dependicies : npm install
