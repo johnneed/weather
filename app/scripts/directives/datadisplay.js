@@ -7,12 +7,12 @@
  * # dataDisplay
  */
 angular.module('weatherApp')
-  .directive('blah', function () {
+  .directive('datadisplay', function () {
     return {
-      template: '<div>aaa</div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the dataDisplay directive');
-      }
+      templateUrl: '../views/my-weather.html',
+      restrict: 'E'
+      //link: function postLink(scope, element, attrs) {
+      //  element.text('this is the dataDisplay directive');
+      //}
     };
   });

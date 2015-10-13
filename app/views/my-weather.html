@@ -1,1 +1,17 @@
-BLAH BLAH BLAH
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">Weather for {{myZIP}}</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">Description</div>
+    <div class="col-sm-3">Temp</div>
+    <div class="col-sm-3">Humidity</div>
+    <div class="col-sm-3">Atmospheric Pressure</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">{{weatherData.weather[0].description}}</div>
+    <div class="col-sm-3">{{weatherData.main.temp}}</div>
+    <div class="col-sm-3">{{weatherData.main.humidity}}</div>
+    <div class="col-sm-3">{{weatherData.main.pressure}}</div>
+  </div>
+</div>
