@@ -2,7 +2,16 @@
   <h1>Weather</h1>
 
   <data-display></data-display>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+  <p>{{weatherData}}</p>
+
+  <p>
+    <label for="zipCode">Enter a US ZIP code</label>
+    <input id="zipCode" ng-model="zipCode"/>
+    <button class="btn btn-lg btn-success" ng-click="fetchWeatherData()">
+      Okay Go!
+      <span class="glyphicon glyphicon-ok"></span>
+    </button>
+  </p>
 </div>
 
 <div class="container">
