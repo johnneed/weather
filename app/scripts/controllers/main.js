@@ -12,7 +12,7 @@ angular.module('weatherApp')
 
 
     function validateZip(zip){
-      var zipRegex = /^\d{5}(?:[-\s]\d{4})?$/;
+      var zipRegex = /^\d{5}?$/;
       return zipRegex.test(zip);
     }
 
