@@ -8,7 +8,7 @@ Angular Demo App
 1. Install Nodejs
 2. Clone reposository
 3. Navigate to the root of project : cd weather
-4. Install grunt and grunt-cli  npm install -g grunt grunt-cli
+4. Install grunt and grunt-cli  : npm install -g grunt grunt-cli
 5. Install dependicies : npm install
 6. Install bower dependencies : bower install
 7. Run the app : grunt serve
