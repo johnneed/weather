@@ -34,8 +34,15 @@ angular.module('weatherApp')
       $http.get(url).success(function (data) {
           var payload = {zip : zip};
           payload.data = data;
-          //Good data, lets instantiate a localWeather object. and execute our callback.
-         callback(new LocalWeather(payload));
+              //Check for city not found response - this does not return an error code so we do this the hard way :-(
+              if(data.cod === "404"){
+                  //Whoops that zip doesn't exist
+                callback(new Error("Invalid Zip Code"));
+
+              } else {
+                  //Good data, lets instantiate a localWeather object. and execute our callback.
+                  callback(new LocalWeather(payload));
+              }
         }
       ).error(function (err) {
           //Bad API call.  let's report the error.

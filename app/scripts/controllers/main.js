@@ -17,7 +17,13 @@ angular.module('weatherApp')
     }
 
     function addToScope(localWeather){
+      if(localWeather.message){ // this is an error
+        $scope.cityNotFound = true;
+        $scope.zipCode = '';
+        return null;
+      }
       $scope.localWeather = localWeather;
+      $scope.cityNotFound = false;
     }
 
     function fetchWeatherData(){
@@ -27,6 +33,7 @@ angular.module('weatherApp')
       }
     }
 
+    $scope.cityNotFound = false;
     $scope.fetchWeatherData = fetchWeatherData;
     $scope.localWeather = {};
     $scope.zipCode = '';
