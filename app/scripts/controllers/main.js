@@ -8,7 +8,7 @@
  * Controller of the weatherApp
  */
 angular.module('weatherApp')
-  .controller('MainCtrl', function ($scope, weatherService, $http) {
+  .controller('MainCtrl', function ($scope, weatherService) {
 
 
     function validateZip(zip){
@@ -29,7 +29,7 @@ angular.module('weatherApp')
 
     $scope.fetchWeatherData = fetchWeatherData;
     $scope.localWeather = {};
-    $scope.zipCode = "";
+    $scope.zipCode = '';
     $scope.isValidZip = validateZip;
 
 

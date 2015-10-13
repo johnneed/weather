@@ -1,6 +1,6 @@
 {
   "name": "weather",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.1",
@@ -39,5 +39,26 @@
   },
   "scripts": {
     "test": "grunt test"
-  }
+  },
+  "description": "Local Weather ============ Angular Demo App ----------------",
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnneed/weather.git"
+  },
+  "keywords": [
+    "Angular",
+    "Demo",
+    "Weather",
+    "App"
+  ],
+  "author": "John Need",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnneed/weather/issues"
+  },
+  "homepage": "https://github.com/johnneed/weather#readme"
 }

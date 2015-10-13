@@ -30,10 +30,10 @@ module.exports = function (grunt) {
     less: {
       development: {
         options: {
-          paths: ["app/styles/less"]
+          paths: ['app/styles/less']
         },
         files: {
-          "app/styles/main.css": "app/styles/less/main.less"
+          'app/styles/main.css': 'app/styles/less/main.less'
         }
       }
     },
