@@ -38,7 +38,8 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "start" : "server.js"
   },
   "description": "Local Weather ============ Angular Demo App ----------------",
   "main": "Gruntfile.js",
